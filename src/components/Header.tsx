@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           <div className="bg-[#7c569d] py-2">
             <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
               <div className="bg-white text-[#7c569d] font-bold px-4 py-1 rounded-md">
-                报名热线: <span className="text-lg">0755-12345678</span>
+                报名热线: <span className="text-lg">0755-88898962</span>
               </div>
               <a href="#" className="text-white hover:text-opacity-80 transition-colors">微信公众号</a>
               <a href="#" className="text-white hover:text-opacity-80 transition-colors">在线报名</a>
@@ -106,12 +106,8 @@ const Header: React.FC = () => {
                         <img 
                             src="/src/assets/images/logo/logo.png" 
                             alt="网站Logo" 
-                            className="h-12"
+                            className="h-[57px]"
                         />
-                        <div className="ml-3">
-                            <div className="text-lg font-bold text-white">深圳市富源学校</div>
-                            <div className="text-xs font-medium text-white text-opacity-80">SHENZHEN FUYUAN SCHOOL</div>
-                        </div>
                     </motion.div>
                     
                     {/* 导航菜单 */}

@@ -5,7 +5,7 @@ const PastAchievements: React.FC = () => {
   const achievements = [
     {
       year: "2023届",
-      content: "高考本科上线率98%，其中重点大学录取率65%"
+      content: "0755-888989620755-888989620755-888989620755-888989620755-888989620755-88898962"
     },
     {
       year: "2022届",
@@ -38,20 +38,22 @@ const PastAchievements: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {achievements.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all"
-            >
-              <div className="text-4xl font-bold text-[#800080] mb-4">{item.year}</div>
-              <p className="text-gray-700">{item.content}</p>
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-8">
+            {achievements.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all"
+              >
+                <div className="text-4xl font-bold text-[#800080] mb-4">{item.year}</div>
+                <p className="text-gray-700">{item.content}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

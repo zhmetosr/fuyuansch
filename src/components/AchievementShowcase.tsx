@@ -8,26 +8,26 @@ const AchievementShowcase: React.FC = () => {
   const achievements = [
     {
       year: "2023届",
-      content: "高考本科上线率98%，重点大学录取率65%"
+      content: "高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%"
     },
     {
       year: "2022届",
-      content: "培养省级高考状元1名，全市前十占3席"
+      content: "培养省级高考状元1名，全市前十占3席高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%"
     },
     {
       year: "2021届",
-      content: "清华北大录取5人，985录取率突破50%"
+      content: "清华北大录取5人，985录取率突破50%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%"
     },
     {
       year: "2020届",
-      content: "学科竞赛国家级12项，省级58项"
+      content: "学科竞赛国家级12项，省级58项高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%高考本科上线率98%，重点大学录取率65%"
     }
   ];
 
   const bannerImages = [
-    "/src/assets/images/achievements/1.jpg",
-    "/src/assets/images/achievements/2.jpg",
-    "/src/assets/images/achievements/3.jpg"
+    "/src/assets/images/achievements/1.JPG",
+    "/src/assets/images/achievements/2.JPG",
+    "/src/assets/images/achievements/3.JPG"
   ];
 
   const nextSlide = () => {
@@ -72,19 +72,19 @@ const AchievementShowcase: React.FC = () => {
             </ul>
           </div>
 
-          {/* 右侧图片轮播 */}
-          <div className="relative h-96">
+          {/* 右侧竖向图片轮播 */}
+          <div className="relative h-[500px] w-[300px] mx-auto">
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-full h-full bg-gray-100 rounded-lg overflow-hidden"
+              className="w-full h-full bg-gray-100 rounded-lg overflow-hidden shadow-lg"
             >
               <img 
                 src={bannerImages[currentSlide]}
                 alt={`往届佳绩 ${currentSlide + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </motion.div>
             
