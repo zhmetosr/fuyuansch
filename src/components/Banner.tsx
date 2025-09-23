@@ -27,7 +27,7 @@ const Banner: React.FC = () => {
       subtitle: "",
       data: [
         { value: "26年", label: "办学悠久" },
-        { value: "1.3万", label: "师生人数" },
+        { value: "1.2万", label: "师生人数" },
         { value: "38万㎡", label: "占地面积" }
       ]
     },
@@ -138,7 +138,7 @@ const Banner: React.FC = () => {
                     transition={{ delay: 0.8, duration: 0.6 }}
                     className="text-center"
                   >
-                    <span className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">1.3万</span>
+                    <span className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">1.2万</span>
                     <p className="text-sm md:text-base text-white text-opacity-90">师生人数</p>
                   </motion.div>
                   <motion.div

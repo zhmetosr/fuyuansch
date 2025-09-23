@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const CoursePreview: React.FC = () => {
   const courses = [
     {
-      title: "高考复读课程",
+      title: "高考复读",
       description: "针对高考复读生的全方位课程体系，涵盖所有考试科目，配备资深教师团队，提供个性化辅导方案。",
       image: "/src/assets/images/courses/gaokao.jpg"
     },
     {
-      title: "中考复读课程",
+      title: "中考复读",
       description: "专为中考复读生设计的系统课程，强化基础知识，提升应试技巧，帮助学生实现成绩突破。",
       image: "/src/assets/images/courses/zhongkao.jpg"
     },
     {
-      title: "英美国际课程",
+      title: "英美国际",
       description: "英美国际课程体系，融合中西教育优势，为学生提供多元化的国际教育选择。",
-      image: "/src/assets/images/courses/international.jpg"
+      image: "/src/assets/images/courses/international.png"
     }
   ];
 
@@ -52,14 +52,14 @@ const CoursePreview: React.FC = () => {
                 />
               </div>
               
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-[#800080] mb-2">
+              <div className="p-6 text-center">
+                <h3 className="text-lg font-bold text-[#800080] mb-2 text-center">
                   {course.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm text-center">
                   {course.description}
                 </p>
-                <div className="mt-4">
+                <div className="mt-4 flex justify-center">
                   <a 
                     href="#" 
                     className="inline-block px-4 py-2 bg-[#800080] text-white text-sm rounded hover:bg-opacity-90 transition-colors"

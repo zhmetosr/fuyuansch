@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Phone, Mail, FileText, Clock } from 'lucide-react';
+import { Calendar, MapPin, Phone, Mail, FileText, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import Header from '../components/Header';
 import TencentMap from '../components/TencentMap';
 import Footer from '../components/Footer';
+import GaokaoAdmission from '../components/GaokaoAdmission';
 
 const Admission: React.FC = () => {
+  const [showGaokao, setShowGaokao] = useState(false);
   return (
     <div className="min-h-screen bg-[#f9f9f9] text-[#333333]">
       <Header />
@@ -50,6 +52,32 @@ const Admission: React.FC = () => {
             >
            <h2 className="text-2xl md:text-3xl font-bold text-[#7c569d] mb-4">2024年春季招生简章</h2>
            <div className="w-24 h-1 bg-[#7c569d]"></div>
+            </motion.div>
+            
+            {/* 高考招生简章 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <div 
+                className="flex items-center justify-between cursor-pointer p-4 bg-[#f9f9f9] rounded-lg"
+                onClick={() => setShowGaokao(!showGaokao)}
+              >
+                <h2 className="text-xl font-bold text-[#7c569d]">高考招生信息</h2>
+                {showGaokao ? <ChevronUp className="text-[#7c569d]" /> : <ChevronDown className="text-[#7c569d]" />}
+              </div>
+              
+              <motion.div
+                initial={false}
+                animate={{ height: showGaokao ? 'auto' : 0, opacity: showGaokao ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <GaokaoAdmission className="mt-4" />
+              </motion.div>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

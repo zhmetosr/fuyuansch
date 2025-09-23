@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const AchievementShowcase: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   
   const achievements = [
     {
@@ -38,6 +39,17 @@ const AchievementShowcase: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + bannerImages.length) % bannerImages.length);
   };
 
+  // 自动轮播功能
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
+    }, 4000); // 每4秒自动切换
+
+    return () => clearInterval(interval);
+  }, [bannerImages.length, isAutoPlaying]);
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -52,7 +64,7 @@ const AchievementShowcase: React.FC = () => {
           <div className="w-24 h-1 bg-[#800080] mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-100 items-center max-w-5xl mx-auto">
           {/* 左侧文字列表 */}
           <div>
             <ul className="space-y-6">
@@ -73,48 +85,46 @@ const AchievementShowcase: React.FC = () => {
           </div>
 
           {/* 右侧竖向图片轮播 */}
-          <div className="relative h-[500px] w-[300px] mx-auto">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-full h-full bg-gray-100 rounded-lg overflow-hidden shadow-lg"
-            >
-              <img 
-                src={bannerImages[currentSlide]}
-                alt={`往届佳绩 ${currentSlide + 1}`}
-                className="w-full h-full object-cover object-center"
-              />
-            </motion.div>
-            
+          <div className="flex items-center justify-center space-x-4">
+            {/* 左侧按钮 */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 text-[#800080] p-2 rounded-full shadow-md transition-all"
+              className="flex items-center justify-center w-12 h-12 bg-purple-500/20 backdrop-blur-lg text-white rounded-full hover:bg-purple-600/30 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/30 hover:border-white/50"
+              aria-label="上一张图片"
             >
               <ChevronLeft size={24} />
             </button>
             
+            {/* 图片区域 */}
+            <div 
+              className="relative h-[400px] w-[300px]"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
+            >
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full bg-gray-100 rounded-lg overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={bannerImages[currentSlide]}
+                  alt={`往届佳绩 ${currentSlide + 1}`}
+                  className="w-full h-full object-cover object-center"
+                />
+              </motion.div>
+              
+            </div>
+            
+            {/* 右侧按钮 */}
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 text-[#800080] p-2 rounded-full shadow-md transition-all"
+              className="flex items-center justify-center w-12 h-12 bg-purple-500/20 backdrop-blur-lg text-white rounded-full hover:bg-purple-600/30 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/30 hover:border-white/50"
+              aria-label="下一张图片"
             >
               <ChevronRight size={24} />
             </button>
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-              {bannerImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    currentSlide === index 
-                      ? 'bg-[#800080] w-6' 
-                      : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -155,8 +155,8 @@ const StudentStars: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-2xl font-semibold text-[#800080] mb-2 text-center">{student.name}</h3>
-                    <p className="text-gray-600 text-lg text-center">{student.achievement}</p>
+                    <h3 className="text-xl font-bold text-purple-600 mb-1 text-center leading-tight font-sans antialiased">{student.name}</h3>
+                    <p className="text-purple-600 text-xl font-bold text-center leading-tight font-sans antialiased">{student.achievement}</p>
                   </div>
                 </motion.div>
               ))}
@@ -212,8 +212,8 @@ const StudentStars: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-semibold text-[#800080] mb-1 text-center">{student.name}</h3>
-                    <p className="text-gray-600 text-sm text-center">{student.achievement}</p>
+                    <h3 className="text-xl font-bold text-purple-600 mb-1 text-center leading-tight font-sans antialiased">{student.name}</h3>
+                    <p className="text-purple-600 text-xl font-bold text-center leading-tight font-sans antialiased">{student.achievement}</p>
                   </div>
                 </motion.div>
               ))}

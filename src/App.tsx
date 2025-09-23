@@ -5,6 +5,7 @@ import Teachers from "@/pages/Teachers";
 import Facilities from "@/pages/Facilities";
 import News from "@/pages/News";
 import Admission from "@/pages/Admission";
+import GaokaoAdmissionPage from "@/pages/GaokaoAdmissionPage";
 import Contact from "@/pages/Contact";
 import CourseCenter from "@/pages/CourseCenter";
 import { useState } from "react";
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/facilities" element={<Facilities />} />
         <Route path="/news" element={<News />} />
         <Route path="/admission" element={<Admission />} />
+        <Route path="/gaokao/admission" element={<GaokaoAdmissionPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/course-center" element={<CourseCenter />} />
         <Route path="*" element={<Home />} />

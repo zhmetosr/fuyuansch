@@ -103,11 +103,14 @@ const Header: React.FC = () => {
                         animate={{ scale: 1 }}
                         className="flex items-center"
                     >
-                        <img 
-                            src="/src/assets/images/logo/logo.png" 
-                            alt="网站Logo" 
-                            className="h-[57px]"
-                        />
+                        <div className="flex items-center">
+                            <img 
+                                src="/src/assets/images/logo/logo.png" 
+                                alt="网站Logo" 
+                                className="h-[57px]"
+                            />
+                            <span className="text-white font-bold ml-2 text-xl">富源学校复读部</span>
+                        </div>
                     </motion.div>
                     
                     {/* 导航菜单 */}
